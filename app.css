@@ -1,0 +1,124 @@
+body {
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: linear-gradient(to right, #c5e3f7, #dfcafc);
+}
+
+h1 {
+    font-size: 70px;
+    font-weight: bold;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+h3 {
+    font-size: 25px;
+    font-weight: normal;
+}
+
+#quote {
+    padding: 50px;
+    margin: 30px auto;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    text-align: center;
+    max-width: 500px;
+    min-height: 170px;
+    background-color: rgba(236, 236, 236, 0.5);
+}
+
+button {
+    padding: 7px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    background-color: rgb(127, 127, 219);
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 15px;
+}
+
+.quoteButtons {
+    padding-bottom: 10px;
+}
+
+.sizeButtons {
+    padding-bottom: 10px;
+}
+
+#categories {
+    background-color: rgb(127, 127, 219);
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+
+.theme {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 23px;
+}
+
+.theme input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    background-color: #b5b3b3;
+    border-radius: 20px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 20px;
+}
+
+.slider::before {
+    content: '';
+    position: absolute;
+    /*knob size*/
+    height: 18px;
+    width: 18px;
+    /*knob ko starting position*/
+    left: 4px;
+    bottom: 3px;
+    /*knob ko color*/
+    background-color: white;
+    /*circle knob*/
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: rgb(4, 83, 4);
+}
+
+input:checked+.slider::before {
+    transform: translateX(25px);
+}
+
+.dark {
+    background: #2b2831;
+    color: #eee;
+}
+
+.dark #quote {
+    border-color: #555;
+    background-color: rgba(76, 72, 72, 0.5);
+}
+
+.dark .quoteButtons button {
+    background-color: rgb(25, 25, 34);
+    border: 1px solid black;
+}
+
+.dark .sizeButtons button {
+    background-color: rgb(25, 25, 34);
+    border: 1px solid black;
+}
+
+.dark #categories {
+    background-color: rgb(25, 25, 34);
+    border: 1px solid black;
+}

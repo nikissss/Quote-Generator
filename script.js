@@ -40,13 +40,21 @@ const quotes = {
         "Good friends are like stars. You don’t always see them, but you know they’re always there."
     ]
 };
-let currentCategory = 'science';
+const isMobile = window.innerWidth <= 480;
+let currentCategory = 'motivational';
 let currentCategoryKoIndex = 0;
-let fontSize = 1.4;
+let fontSize = isMobile ? 1 : 2;
+const minSize = isMobile ? 0.7 : 1.2;
+const maxSize = isMobile ? 3 : 5;
 const divquote = document.getElementById('quote');
 
 function showQuote() {
     divquote.textContent = quotes[currentCategory][currentCategoryKoIndex];
+}
+
+function updateButtons() {
+    incBtn.disabled = fontSize >= maxSize;
+    decBtn.disabled = fontSize <= minSize;
 }
 
 const selectedCategory = document.getElementById('categories');
@@ -79,13 +87,19 @@ document.getElementById('randomButton').addEventListener("click", () => {
 });
 
 document.getElementById('incFont').addEventListener("click", () => {
-    fontSize += 0.2;
-    divquote.style.fontSize = fontSize + "rem";
+    if (fontSize <= maxSize) {
+        fontSize += 0.2;
+        divquote.style.fontSize = fontSize + "rem";
+        updateButtons();
+    }
 });
 
 document.getElementById('decFont').addEventListener("click", () => {
-    fontSize -= 0.2;
-    divquote.style.fontSize = fontSize + "rem";
+    if (fontSize >= minSize) {
+        fontSize -= 0.2;
+        divquote.style.fontSize = fontSize + "rem";
+        updateButtons();
+    }
 });
 
 document.getElementById("themeToggle").addEventListener("change", () => {

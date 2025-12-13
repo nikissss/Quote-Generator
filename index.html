@@ -4,34 +4,39 @@
 <head>
     <title>Simple Quote Generator</title>
     <link rel='stylesheet' href="app.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
     <h1>Daily Inspiration</h1>
     <h3>What type of inspiration do you want?</h3>
-    <select id="categories">
-        <option value="motivational">Motivational</option>
-        <option value="happiness">Happiness</option>
-        <option value="life">Life</option>
-        <option value="success">Success</option>
-        <option value="friendship">Friendship</option>
-    </select>
+    <label class="theme">
+        <input type="checkbox" id="themeToggle">
+        <span class="slider">
+            <span class="icon moon">🌙</span>
+            <span class="icon sun">☀️</span>
+        </span>
+    </label>
+    <div class="textRelated">
+        <select id="categories">
+            <option value="motivational">Motivational</option>
+            <option value="happiness">Happiness</option>
+            <option value="life">Life</option>
+            <option value="success">Success</option>
+            <option value="friendship">Friendship</option>
+        </select>
+        <div class="sizeButtons">
+            <button id="decFont">-</button>
+            <span>Font Size</span>
+            <button id="incFont">+</button>
+        </div>
+    </div>
     <div id="quote"></div>
     <div class="quoteButtons">
         <button id="prevButton">Prev</button>
-        <button id="nextButton">Next</button>
         <button id="randomButton">Randomize</button>
+        <button id="nextButton">Next</button>
     </div>
-    <div class="sizeButtons">
-        <button id="decFont">-</button>
-        <span>Font Size</span>
-        <button id="incFont">+</button>
-    </div>
-    <p>Change Theme:</p>
-    <label class="theme">
-        <input type="checkbox" id="themeToggle">
-        <span class="slider round"></span>
-    </label>
     <script src='script.js'></script>
 </body>
 

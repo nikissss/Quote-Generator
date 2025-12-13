@@ -13,6 +13,9 @@ h1 {
 h3 {
     font-size: 25px;
     font-weight: normal;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 100px;
 }
 
 #quote {
@@ -30,27 +33,61 @@ button {
     padding: 7px;
     border-radius: 10px;
     border: 1px solid grey;
-    background-color: rgb(127, 127, 219);
+    background-color: rgb(111, 114, 175);
     color: white;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 15px;
+    font-size: 20px;
+}
+
+button:hover {
+    transform: translateY(-15px);
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: background-color 0.2s;
+    background-color: rgb(194, 195, 223);
+    color: black;
+
 }
 
 .quoteButtons {
-    padding-bottom: 10px;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+}
+
+.quoteButtons button {
+    padding: 15px;
 }
 
 .sizeButtons {
     padding-bottom: 10px;
 }
 
+.sizeButtons button {
+    width: 30px;
+}
+
+.sizeButtons button:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+    transform: none;
+}
+
 #categories {
-    background-color: rgb(127, 127, 219);
+    background-color: rgb(111, 114, 175);
     border-radius: 10px;
     padding: 10px;
     color: white;
     font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 17px;
+    cursor: pointer;
+}
 
+.textRelated {
+    display: flex;
+    justify-content: center;
+    gap: 300px;
 }
 
 .theme {
@@ -58,6 +95,7 @@ button {
     display: inline-block;
     width: 50px;
     height: 23px;
+    top: 10px;
 }
 
 .theme input {
@@ -91,7 +129,7 @@ button {
 }
 
 input:checked+.slider {
-    background-color: rgb(4, 83, 4);
+    background-color: rgb(0, 0, 0);
 }
 
 input:checked+.slider::before {
@@ -108,12 +146,7 @@ input:checked+.slider::before {
     background-color: rgba(76, 72, 72, 0.5);
 }
 
-.dark .quoteButtons button {
-    background-color: rgb(25, 25, 34);
-    border: 1px solid black;
-}
-
-.dark .sizeButtons button {
+.dark button {
     background-color: rgb(25, 25, 34);
     border: 1px solid black;
 }
@@ -121,4 +154,85 @@ input:checked+.slider::before {
 .dark #categories {
     background-color: rgb(25, 25, 34);
     border: 1px solid black;
+}
+
+@media (max-width: 768px) {
+
+    h1 {
+        font-size: 60px;
+    }
+
+    h3 {
+        font-size: 18px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+    }
+
+    .theme {
+        top: 10px;
+    }
+
+    #quote {
+        padding: 25px;
+        margin: 20px;
+        max-width: 90%;
+        min-height: 200px;
+    }
+
+    .quoteButtons {
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+
+    .quoteButtons button {
+        padding: 12px;
+        font-size: 16px;
+    }
+
+    .textRelated {
+        gap: 200px;
+        flex-wrap: wrap;
+    }
+
+    #categories {
+        font-size: 15px;
+        padding: 8px;
+
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    h1 {
+        font-size: 40px;
+    }
+
+    h3 {
+        font-size: 16px;
+        margin-right: 0px;
+    }
+
+    #quote {
+        padding: 20px;
+        min-height: 150px;
+    }
+
+    .quoteButtons {
+        gap: 20px;
+    }
+
+    .textRelated {
+        flex-direction: row;
+        align-items: center;
+        gap: 70px;
+    }
+
+    .sizeButtons button {
+        margin-top: 10px;
+        width: 34px;
+    }
 }

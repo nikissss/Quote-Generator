@@ -96,7 +96,7 @@ button:hover {
     display: inline-block;
     width: 50px;
     height: 23px;
-    top: 10px;
+    top: 7px;
 }
 
 .theme input {
@@ -216,10 +216,31 @@ input:checked+.slider::before {
         font-size: 16px;
         margin-right: 0px;
     }
-    .theme{
-        width: 50px;
-        height: 23px;
+
+    .theme {
+        width: 55px;
+        height: 30px;
     }
+
+    .slider::before {
+        content: '';
+        position: absolute;
+        /*knob size*/
+        height: 22px;
+        width: 22px;
+        /*knob ko starting position*/
+        left: 4px;
+        bottom: 4px;
+        /*knob ko color*/
+        background-color: white;
+        /*circle knob*/
+        border-radius: 50%;
+    }
+
+    input:checked+.slider::before {
+        transform: translateX(25px);
+    }
+
     #quote {
         padding: 20px;
         min-height: 150px;

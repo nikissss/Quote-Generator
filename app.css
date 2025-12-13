@@ -82,6 +82,7 @@ button:hover {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: 17px;
     cursor: pointer;
+    border: 1px solid grey;
 }
 
 .textRelated {
@@ -215,7 +216,10 @@ input:checked+.slider::before {
         font-size: 16px;
         margin-right: 0px;
     }
-
+    .theme{
+        width: 50px;
+        height: 23px;
+    }
     #quote {
         padding: 20px;
         min-height: 150px;

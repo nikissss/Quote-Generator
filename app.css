@@ -27,6 +27,7 @@ h3 {
     max-width: 500px;
     min-height: 170px;
     background-color: rgba(236, 236, 236, 0.5);
+    white-space: pre-line;
 }
 
 button {
@@ -231,6 +232,64 @@ input:checked+.slider::before {
         /*knob ko starting position*/
         left: 4px;
         bottom: 4px;
+        /*knob ko color*/
+        background-color: white;
+        /*circle knob*/
+        border-radius: 50%;
+    }
+
+    input:checked+.slider::before {
+        transform: translateX(25px);
+    }
+
+    #quote {
+        padding: 20px;
+        min-height: 150px;
+    }
+
+    .quoteButtons {
+        gap: 20px;
+    }
+
+    .textRelated {
+        flex-direction: row;
+        align-items: center;
+        gap: 70px;
+    }
+
+    .sizeButtons button {
+        margin-top: 10px;
+        width: 34px;
+    }
+}
+
+
+@media (max-width: 344px) {
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h3 {
+        font-size: 10px;
+        margin-right: 0px;
+    }
+
+    .theme {
+        width: 48px;
+        height: 22px;
+        top: 5px;
+    }
+
+    .slider::before {
+        content: '';
+        position: absolute;
+        /*knob size*/
+        height: 18px;
+        width: 18px;
+        /*knob ko starting position*/
+        left: 2px;
+        bottom: 2px;
         /*knob ko color*/
         background-color: white;
         /*circle knob*/

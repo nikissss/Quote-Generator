@@ -1,51 +1,47 @@
 const quotes = {
     motivational: [
-        "The only way to achieve the impossible is to believe it is possible.",
-        "Push yourself, because no one else is going to do it for you.",
-        "Great things never come from comfort zones.",
-        "Dream it. Wish it. Do it.",
-        "Don’t stop when you’re tired; stop when you’re done.",
-        "Success doesn’t just find you. You have to go out and get it."
+        "Start where you are. Use what you have. Do what you can. \n - Arthur Ashe ",
+        "All our dreams can come true, if we have the courage to pursue them. \n - Walt Disney ",
+        "Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time. \n - Thomas A. Edison ",
+        "The future belongs to those who believe in the beauty of their dreams. \n - Eleanor Roosevelt ",
+        "Don't watch the clock; do what it does. Keep going. \n - Sam Levenson ",
     ],
     happiness: [
-        "Happiness is not something ready made. It comes from your own actions.",
-        "For every minute you are angry, you lose sixty seconds of happiness.",
-        "Happiness depends upon ourselves.",
-        "Count your age by friends, not years. Count your life by smiles, not tears.",
-        "Happiness is when what you think, what you say, and what you do are in harmony.",
-        "The purpose of our lives is to be happy."
+        "Happiness is not something ready made. It comes from your own actions. \n - Dalai Lama ",
+        "For every minute you are angry you lose sixty seconds of happiness. \n - Ralph Waldo Emerson ",
+        "Happiness is when what you think, what you say, and what you do are in harmony. \n - Mahatma Gandhi ",
+        "The purpose of our lives is to be happy. \n - Dalai Lama ",
+        "Happiness depends upon ourselves. \n - Aristotle "
     ],
     life: [
-        "Life is what happens when you're busy making other plans.",
-        "In the end, it’s not the years in your life that count. It’s the life in your years.",
-        "Life is either a daring adventure or nothing at all.",
-        "Turn your wounds into wisdom.",
-        "Do not take life too seriously. You will never get out of it alive.",
-        "Life is short, and it is up to you to make it sweet."
+        "The only way to do great work is to love what you do. \n - Steve Jobs ",
+        "In the end, it's not the years in your life that count. It's the life in your years. \n - Abraham Lincoln ",
+        "Life is what happens when you're busy making other plans. \n - John Lennon ",
+        "You have within you right now, everything you need to deal with whatever the world can throw at you. \n - Brian Tracy ",
+        "Believe you can and you're halfway there. \n - Theodore Roosevelt ",
+        "The best way to predict the future is to invent it. \n - Alan Kay "
     ],
     success: [
-        "Success usually comes to those who are too busy to be looking for it.",
-        "Don’t be afraid to give up the good to go for the great.",
-        "I find that the harder I work, the more luck I seem to have.",
-        "Success is not in what you have, but who you are.",
-        "Opportunities don’t happen. You create them.",
-        "The road to success and the road to failure are almost exactly the same."
+        "Success is not final; failure is not fatal: It is the courage to continue that counts. \n - Winston S. Churchill ",
+        "Don't be afraid to give up the good to go for the great. \n - John D. Rockefeller ",
+        "I find that the harder I work, the more luck I seem to have. \n - Thomas Jefferson ",
+        "Success usually comes to those who are too busy to be looking for it. \n - Henry David Thoreau ",
+        
     ],
     friendship: [
-        "A real friend is one who walks in when the rest of the world walks out.",
-        "Friendship is the only cement that will ever hold the world together.",
-        "True friends are like diamonds — bright, beautiful, valuable, and always in style.",
-        "A friend is someone who knows all about you and still loves you.",
-        "Friendship is born at that moment when one person says to another: ‘What! You too? I thought I was the only one.’",
-        "Good friends are like stars. You don’t always see them, but you know they’re always there."
+        "A real friend is one who walks in when the rest of the world walks out. \n - Walter Winchell ",
+        "Friendship is born at that moment when one person says to another, 'What! You too? I thought I was the only one.' \n - C.S. Lewis ",
+        "A single rose can be my garden... a single friend, my world. \n - Leo Buscaglia ",
+        "True friendship comes when the silence between two people is comfortable. \n - David Tyson ",
+        "A friend is someone who knows all about you and still loves you. \n - Elbert Hubbard "
     ]
 };
 const isMobile = window.innerWidth <= 480;
 let currentCategory = 'motivational';
 let currentCategoryKoIndex = 0;
-let fontSize = isMobile ? 1 : 2;
-const minSize = isMobile ? 0.7 : 1.2;
-const maxSize = isMobile ? 3 : 5;
+let fontSize = isMobile ? 1 : 1;
+const minSize = isMobile ? 0.4 : 0.5;
+const maxSize = isMobile ? 3 : 6;
 const divquote = document.getElementById('quote');
 
 function showQuote() {
@@ -53,8 +49,8 @@ function showQuote() {
 }
 
 function updateButtons() {
-    incBtn.disabled = fontSize >= maxSize;
-    decBtn.disabled = fontSize <= minSize;
+    incFont.disabled = fontSize >= maxSize;
+    decFont.disabled = fontSize <= minSize;
 }
 
 const selectedCategory = document.getElementById('categories');
@@ -88,7 +84,7 @@ document.getElementById('randomButton').addEventListener("click", () => {
 
 document.getElementById('incFont').addEventListener("click", () => {
     if (fontSize <= maxSize) {
-        fontSize += 0.2;
+        fontSize += 0.1;
         divquote.style.fontSize = fontSize + "rem";
         updateButtons();
     }
@@ -96,7 +92,7 @@ document.getElementById('incFont').addEventListener("click", () => {
 
 document.getElementById('decFont').addEventListener("click", () => {
     if (fontSize >= minSize) {
-        fontSize -= 0.2;
+        fontSize -= 0.1;
         divquote.style.fontSize = fontSize + "rem";
         updateButtons();
     }
